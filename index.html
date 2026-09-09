@@ -3,219 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Confraria Bem-te-vi | Bar Bem-te-vi</title>
-<meta name="description" content="Confraria Bem-te-vi — Bar Bem-te-vi, em São João da Boa Vista, SP. Endereço, horário e contato.">
+<title>Confraria Bem-te-vi</title>
+<meta name="description" content="Confraria Bem-te-vi — seu lugar de pouso em São João da Boa Vista, SP. Mesa boa, povo bom, chopp gelado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Baloo+2:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#1c1712;
-    --bg-alt:#241d16;
-    --card:#2a2119;
-    --accent:#c9973f;
-    --accent-light:#e3bb6d;
-    --text:#f3ece0;
-    --text-dim:#c9bfae;
-    --border:#3a2f24;
+    --navy:#14213D;
+    --navy-2:#1c2c4f;
+    --navy-3:#253a63;
+    --gold:#FFC300;
+    --gold-light:#ffd54f;
+    --teal:#1985A1;
+    --cream:#f6efdd;
+    --cream-dim:#d8cfb4;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'Georgia','Times New Roman',serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
+    margin:0;
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Montserrat',sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
+  h1,h2{font-family:'Baloo 2',sans-serif;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .tile-border{
+    height:26px;
+    background-image:url('assets/tile-gold.png');
+    background-size:46px 46px;
+    background-repeat:repeat;
+    opacity:.9;
+  }
+  .tile-border.teal{background-image:url('assets/tile-teal.png');}
+  .tile-border.on-navy{opacity:.75;}
+
   header{
-    padding:28px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    background:rgba(28,23,18,0.95);
-    backdrop-filter:blur(4px);
-    z-index:10;
+    position:sticky;top:0;z-index:50;
+    background:rgba(20,33,61,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,195,0,.25);
   }
-  .brand{
-    font-size:1.3rem;
-    letter-spacing:1px;
-    color:var(--accent-light);
-    font-weight:bold;
+  .header-inner{
+    max-width:1120px;margin:0 auto;padding:12px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
-  nav a{
-    color:var(--text-dim);
-    text-decoration:none;
-    margin-left:22px;
-    font-size:0.95rem;
-    transition:color .2s;
-  }
-  nav a:hover{color:var(--accent-light);}
+  .brand-mini{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);}
+  .brand-mini img{height:38px;width:38px;}
+  .brand-mini span{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em;color:var(--cream);}
+  nav{display:flex;align-items:center;gap:22px;}
+  nav a{color:var(--cream-dim);text-decoration:none;font-size:.9rem;font-weight:600;letter-spacing:.02em;transition:color .15s;}
+  nav a:hover{color:var(--gold);}
+  nav a.ig{color:var(--gold-light);}
+  @media (max-width:640px){ nav a.nav-link{display:none;} }
+
   .hero{
-    min-height:64vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+    position:relative;
+    padding:76px 20px 84px;
     text-align:center;
-    padding:60px 24px;
     background:
-      radial-gradient(circle at 50% 20%, rgba(201,151,63,0.10), transparent 60%),
-      var(--bg);
+      radial-gradient(ellipse at 30% 15%, rgba(255,195,0,.16), transparent 55%),
+      radial-gradient(ellipse at 75% 85%, rgba(25,133,161,.28), transparent 55%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 55%, var(--navy-3) 100%);
+    overflow:hidden;
   }
-  .hero .kicker{
-    color:var(--accent);
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-size:0.8rem;
-    margin-bottom:18px;
-  }
-  .hero h1{
-    font-size:clamp(2.2rem, 6vw, 4rem);
-    color:var(--text);
-    font-weight:normal;
-    margin-bottom:16px;
-  }
-  .hero h1 span{color:var(--accent-light);font-style:italic;}
-  .hero p.tagline{
-    max-width:520px;
-    color:var(--text-dim);
-    font-size:1.1rem;
-    margin-bottom:34px;
-  }
+  .hero-inner{position:relative;max-width:720px;margin:0 auto;}
+  .badge-wrap img{width:150px;height:150px;margin:0 auto 22px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));}
+  .kicker{color:var(--gold-light);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:700;margin-bottom:14px;}
+  .hero h1{margin:0 0 10px;}
+  .hero-word{height:64px;width:auto;margin:0 auto;}
+  @media (max-width:480px){ .hero-word{height:46px;} }
+  .landing{font-family:'Indie Flower',cursive;font-weight:700;font-size:1.7rem;color:var(--gold-light);margin:0 0 18px;}
+  .tagline{color:var(--cream-dim);font-size:1.08rem;line-height:1.65;max-width:480px;margin:0 auto 34px;}
+  .btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
   .btn{
-    display:inline-block;
-    padding:14px 30px;
-    background:var(--accent);
-    color:#1c1712;
-    text-decoration:none;
-    border-radius:4px;
-    font-family:Arial, sans-serif;
-    font-weight:bold;
-    letter-spacing:0.5px;
-    transition:background .2s, transform .2s;
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 26px;border-radius:999px;font-weight:700;font-size:.95rem;
+    text-decoration:none;transition:transform .15s, box-shadow .15s;
   }
-  .btn:hover{background:var(--accent-light);transform:translateY(-1px);}
-  section{
-    padding:64px 24px;
-    max-width:900px;
-    margin:0 auto;
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);box-shadow:0 8px 20px rgba(255,195,0,.28);}
+  .btn-outline{border:1.5px solid rgba(246,239,221,.5);color:var(--cream);}
+  .btn svg{width:18px;height:18px;}
+
+  section{padding:74px 20px;max-width:1120px;margin:0 auto;}
+  .eyebrow{color:var(--teal);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;margin-bottom:10px;text-align:center;}
+  h2{font-size:2.1rem;text-align:center;margin:0 0 20px;color:var(--navy);}
+  .lede{max-width:600px;margin:0 auto;text-align:center;color:#48506b;line-height:1.75;font-size:1.02rem;}
+  .quote{font-family:'Indie Flower',cursive;font-weight:700;font-size:1.6rem;color:var(--teal);text-align:center;margin-top:22px;}
+
+  .menu-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:16px;margin-top:40px;
   }
-  section h2{
-    font-size:1.8rem;
-    color:var(--accent-light);
-    font-weight:normal;
-    margin-bottom:22px;
-    text-align:center;
+  .menu-card{
+    background:#fff;border:1px solid rgba(20,33,61,.08);
+    border-radius:16px;padding:26px 12px;text-align:center;
+    box-shadow:0 4px 14px rgba(20,33,61,.05);
+    transition:transform .15s, box-shadow .15s;
   }
-  .sobre p{
-    color:var(--text-dim);
-    max-width:640px;
-    margin:0 auto;
-    text-align:center;
-    font-size:1.05rem;
+  .menu-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(20,33,61,.1);}
+  .menu-card .ic{width:34px;height:34px;margin:0 auto 12px;color:var(--teal);}
+  .menu-card span{font-weight:700;font-size:.92rem;color:var(--navy);}
+
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    grid-auto-rows:230px;gap:14px;margin-top:40px;
   }
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:24px;
-    margin-top:36px;
+  .gallery-item{
+    border-radius:16px;overflow:hidden;position:relative;
+    background:linear-gradient(135deg,var(--navy-3),var(--navy));
+    display:flex;align-items:center;justify-content:center;
   }
-  .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:28px 24px;
-    text-align:center;
+  .gallery-item.wide{grid-column:span 2;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+  .gallery-item:hover img{transform:scale(1.05);}
+  .gallery-item.placeholder img{width:44px;height:44px;opacity:.5;object-fit:contain;}
+  .gallery-note{text-align:center;color:#6b7280;font-size:.9rem;margin-top:18px;}
+  .gallery-note a{color:var(--teal);font-weight:700;text-decoration:none;}
+  .gallery-note a:hover{text-decoration:underline;}
+  @media (max-width:640px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;}
+    .gallery-item.wide{grid-column:span 2;}
   }
-  .card .icon{font-size:1.8rem;margin-bottom:12px;}
-  .card h3{
-    font-family:Arial, sans-serif;
-    font-size:0.85rem;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    color:var(--accent);
-    margin-bottom:10px;
+
+  .contato-wrap{background:var(--navy);}
+  .contato-wrap .eyebrow{color:var(--gold-light);}
+  .contato-wrap h2{color:var(--cream);}
+  .contato-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;margin-top:40px;
   }
-  .card p{color:var(--text-dim);font-size:0.98rem;}
-  .card a{color:var(--accent-light);text-decoration:none;}
-  .card a:hover{text-decoration:underline;}
+  .contato-card{
+    background:rgba(246,239,221,.05);border:1px solid rgba(255,195,0,.18);
+    border-radius:16px;padding:26px 22px;
+  }
+  .contato-card h3{margin:0 0 10px;color:var(--gold-light);font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;}
+  .contato-card p, .contato-card a{color:var(--cream-dim);line-height:1.65;font-size:.96rem;text-decoration:none;}
+  .contato-card a:hover{color:var(--gold-light);}
+
   .cta{
-    background:var(--bg-alt);
-    text-align:center;
-    padding:64px 24px;
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
+    text-align:center;padding:80px 20px;
+    background:linear-gradient(135deg,var(--teal),var(--navy));
   }
-  .cta h2{color:var(--text);}
-  .cta p{color:var(--text-dim);margin-bottom:28px;}
-  footer{
-    text-align:center;
-    padding:36px 24px;
-    color:var(--text-dim);
-    font-family:Arial, sans-serif;
-    font-size:0.85rem;
-  }
-  footer .legal{opacity:0.6;margin-top:6px;}
-  @media (max-width:600px){
-    nav a{margin-left:14px;font-size:0.85rem;}
-  }
+  .cta .landing{color:var(--gold-light);}
+  .cta h2{color:var(--cream);}
+
+  footer{background:var(--navy);padding:46px 20px 30px;text-align:center;}
+  footer img.wordmark{height:52px;margin:0 auto 14px;}
+  footer .addr{color:var(--cream-dim);font-size:.88rem;line-height:1.6;margin-bottom:10px;}
+  footer .social{margin-bottom:14px;}
+  footer .social a{color:var(--gold-light);text-decoration:none;font-size:.88rem;font-weight:600;}
+  footer .legal{color:rgba(216,207,180,.45);font-size:.76rem;}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">Confraria Bem-te-vi</div>
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <div class="header-inner">
+    <a href="#" class="brand-mini">
+      <img src="assets/badge.svg" alt="Confraria Bem-te-vi">
+      <span>Confraria Bem-te-vi</span>
+    </a>
+    <nav>
+      <a class="nav-link" href="#sobre">Sobre</a>
+      <a class="nav-link" href="#cardapio">Cardápio</a>
+      <a class="nav-link" href="#fotos">Fotos</a>
+      <a class="nav-link" href="#contato">Contato</a>
+      <a class="ig" href="https://www.instagram.com/bemtevi.confraria/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="kicker">Bar &amp; Confraria</div>
-  <h1>Bar <span>Bem-te-vi</span></h1>
-  <p class="tagline">Um point de bairro em São João da Boa Vista para tomar um copo, comer bem e ficar à vontade com os amigos.</p>
-  <a class="btn" href="https://wa.me/5519995554131" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge-wrap"><img src="assets/badge.svg" alt="Confraria Bem-te-vi"></div>
+    <div class="kicker">Bar &amp; Confraria · São João da Boa Vista</div>
+    <h1><img class="hero-word" src="assets/wordmark-bemtevi-cream.png" alt="Bem-te-vi"></h1>
+    <div class="landing">↓ vem pousar</div>
+    <p class="tagline">Mesa boa. Povo bom. Chopp gelado.<br>Seu lugar de pouso em São João da Boa Vista.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="https://wa.me/5519995554131" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2.9C8.8 2.9 2.9 8.8 2.9 16c0 2.5.7 4.9 1.9 7L3 29l6.2-1.7c2 1.1 4.3 1.7 6.8 1.7 7.2 0 13.1-5.9 13.1-13.1S23.2 2.9 16 2.9zm0 23.7c-2.2 0-4.4-.6-6.2-1.7l-.4-.2-4.2 1.1 1.1-4.1-.3-.4c-1.2-1.9-1.9-4.1-1.9-6.3 0-6.1 5-11.1 11.1-11.1s11.1 5 11.1 11.1-5.1 11.1-11.1 11.1zm5.9-8.2c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#cardapio">Ver cardápio</a>
+    </div>
+  </div>
+</div>
+<div class="tile-border"></div>
+
+<section id="sobre">
+  <div class="eyebrow">Sobre a casa</div>
+  <h2>Um pouso pra chamar de seu</h2>
+  <p class="lede">A Confraria Bem-te-vi nasceu pra ser aquele point de bairro onde todo mundo se sente em casa: mesa farta, chopp sempre gelado e aquele papo bom que só rola com boa companhia. Um lugar pra pousar depois de um dia cheio — e ficar.</p>
+  <p class="quote">"vem pousar." 🦜</p>
 </section>
 
-<section class="sobre" id="sobre">
-  <h2>Sobre a casa</h2>
-  <p>
-    O Bar Bem-te-vi (Confraria Bem-te-vi) é um bar de bairro em São João da Boa Vista, SP.
-    Um lugar simples e acolhedor para happy hour, encontros com amigos e aquele momento de
-    descontração no fim do dia.
-  </p>
-</section>
-
-<section id="contato">
-  <h2>Contato &amp; Endereço</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="icon">📍</div>
-      <h3>Endereço</h3>
-      <p>Avenida Doutor Durval Nicolau, 1705<br>São João da Boa Vista &ndash; SP<br>CEP 13874-422</p>
+<section id="cardapio">
+  <div class="eyebrow">Cardápio</div>
+  <h2>Tem pra todo mundo</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11h16M6 11a6 6 0 0012 0M9 11V7m6 4V7M9 7a1.5 1.5 0 013 0 1.5 1.5 0 013 0"/></svg>
+      <span>Petiscos</span>
     </div>
-    <div class="card">
-      <div class="icon">📞</div>
-      <h3>WhatsApp</h3>
-      <p><a href="https://wa.me/5519995554131" target="_blank" rel="noopener">+55 19 99555-4131</a></p>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r=".8" fill="currentColor"/><circle cx="14" cy="9" r=".8" fill="currentColor"/><circle cx="13" cy="14" r=".8" fill="currentColor"/><circle cx="9" cy="15" r=".8" fill="currentColor"/></svg>
+      <span>Pizzas</span>
     </div>
-    <div class="card">
-      <div class="icon">🕒</div>
-      <h3>Horário</h3>
-      <p>Consulte horário de funcionamento<br>pelo WhatsApp</p>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3l8 8-5 5-8-8z"/><path d="M13 6l5 5"/><path d="M4 20l3-3"/></svg>
+      <span>Drinks</span>
+    </div>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6l-1 6a4 4 0 01-4 0z"/><path d="M11 9v9M8 21h8l-1-3H9z"/></svg>
+      <span>Vinhos</span>
+    </div>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 10h8v8a2 2 0 01-2 2H9a2 2 0 01-2-2z"/><path d="M15 12h1.5a1.5 1.5 0 010 3H15"/><path d="M9 10V6a2 2 0 014 0"/></svg>
+      <span>Cerveja &amp; Chopp</span>
+    </div>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v4M12 2v4M16 2v4M6 8h12l-1 12a2 2 0 01-2 2H9a2 2 0 01-2-2z"/></svg>
+      <span>Sem Álcool</span>
+    </div>
+    <div class="menu-card">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 3 5 5.5 5 8.5A5 5 0 0112 17a5 5 0 01-5-5.5C7 8.5 9 6 12 3z"/></svg>
+      <span>Sobremesas</span>
     </div>
   </div>
 </section>
+<div class="tile-border teal"></div>
+
+<section id="fotos">
+  <div class="eyebrow">A casa</div>
+  <h2>Um clique do nosso pouso</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item wide"><img src="assets/photos/ambiance-patio.jpg" alt="Mesas na varanda da Confraria Bem-te-vi"></div>
+    <div class="gallery-item"><img src="assets/photos/fachada.jpg" alt="Fachada iluminada da Confraria Bem-te-vi à noite"></div>
+    <div class="gallery-item"><img src="assets/photos/pizza.jpg" alt="Pizza da Confraria Bem-te-vi"></div>
+    <div class="gallery-item"><img src="assets/photos/petisco.jpg" alt="Petisco da Confraria Bem-te-vi"></div>
+    <div class="gallery-item"><img src="assets/photos/pessoas.jpg" alt="Atendimento na mesa da Confraria Bem-te-vi"></div>
+    <div class="gallery-item"><img src="assets/photos/drink-chopp.jpg" alt="Chopp Brahma servido na Confraria Bem-te-vi"></div>
+    <div class="gallery-item"><img src="assets/photos/drink-spritz.jpg" alt="Drink no cardápio da Confraria Bem-te-vi"></div>
+  </div>
+  <p class="gallery-note">Segue a gente no <a href="https://www.instagram.com/bemtevi.confraria" target="_blank" rel="noopener">Instagram</a> pra ver o dia a dia por lá.</p>
+</section>
+
+<div class="contato-wrap" id="contato">
+  <section>
+    <div class="eyebrow">Contato &amp; Endereço</div>
+    <h2>Bora marcar essa mesa</h2>
+    <div class="contato-grid">
+      <div class="contato-card">
+        <h3>Endereço</h3>
+        <p>Av. Dr. Durval Nicolau, 1705<br>Jardim Recanto do Bosque<br>São João da Boa Vista – SP<br>CEP 13874-422</p>
+      </div>
+      <div class="contato-card">
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/5519995554131" target="_blank" rel="noopener">+55 19 99555-4131</a></p>
+      </div>
+      <div class="contato-card">
+        <h3>Instagram</h3>
+        <p><a href="https://www.instagram.com/bemtevi.confraria/" target="_blank" rel="noopener">@bemtevi.confraria</a></p>
+      </div>
+      <div class="contato-card">
+        <h3>Horário</h3>
+        <p>Terça a quinta: 17h30 às 23h<br>Sexta: 17h às 00h<br>Sábado: 11h30 às 00h<br>Domingo: 11h30 às 23h<br>Segunda: fechado</p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="tile-border on-navy" style="background-color:var(--navy)"></div>
 
 <div class="cta">
-  <h2>Vem tomar uma com a gente</h2>
-  <p>Fale com a gente pelo WhatsApp para reservas e informações.</p>
-  <a class="btn" href="https://wa.me/5519995554131" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  <div class="landing">vem pousar 🦜</div>
+  <h2>A gente te espera</h2>
+  <div class="btn-row">
+    <a class="btn btn-gold" href="https://wa.me/5519995554131" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
 </div>
 
 <footer>
-  <div>Bar Bem-te-vi &middot; Confraria Bem-te-vi</div>
+  <img class="wordmark" src="assets/wordmark-full-cream.png" alt="Confraria Bem-te-vi">
+  <div class="addr">Av. Dr. Durval Nicolau, 1705 — Jardim Recanto do Bosque — São João da Boa Vista, SP</div>
+  <div class="social"><a href="https://www.instagram.com/bemtevi.confraria/" target="_blank" rel="noopener">@bemtevi.confraria</a></div>
   <div class="legal">Romz Comércio de Alimentos Ltda</div>
 </footer>
 
