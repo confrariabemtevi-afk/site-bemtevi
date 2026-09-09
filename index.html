@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confraria Bem-te-vi | Bar Bem-te-vi</title>
+<meta name="description" content="Confraria Bem-te-vi — Bar Bem-te-vi, em São João da Boa Vista, SP. Endereço, horário e contato.">
+<style>
+  :root{
+    --bg:#1c1712;
+    --bg-alt:#241d16;
+    --card:#2a2119;
+    --accent:#c9973f;
+    --accent-light:#e3bb6d;
+    --text:#f3ece0;
+    --text-dim:#c9bfae;
+    --border:#3a2f24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Georgia','Times New Roman',serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+  header{
+    padding:28px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    background:rgba(28,23,18,0.95);
+    backdrop-filter:blur(4px);
+    z-index:10;
+  }
+  .brand{
+    font-size:1.3rem;
+    letter-spacing:1px;
+    color:var(--accent-light);
+    font-weight:bold;
+  }
+  nav a{
+    color:var(--text-dim);
+    text-decoration:none;
+    margin-left:22px;
+    font-size:0.95rem;
+    transition:color .2s;
+  }
+  nav a:hover{color:var(--accent-light);}
+  .hero{
+    min-height:64vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 24px;
+    background:
+      radial-gradient(circle at 50% 20%, rgba(201,151,63,0.10), transparent 60%),
+      var(--bg);
+  }
+  .hero .kicker{
+    color:var(--accent);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 6vw, 4rem);
+    color:var(--text);
+    font-weight:normal;
+    margin-bottom:16px;
+  }
+  .hero h1 span{color:var(--accent-light);font-style:italic;}
+  .hero p.tagline{
+    max-width:520px;
+    color:var(--text-dim);
+    font-size:1.1rem;
+    margin-bottom:34px;
+  }
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:var(--accent);
+    color:#1c1712;
+    text-decoration:none;
+    border-radius:4px;
+    font-family:Arial, sans-serif;
+    font-weight:bold;
+    letter-spacing:0.5px;
+    transition:background .2s, transform .2s;
+  }
+  .btn:hover{background:var(--accent-light);transform:translateY(-1px);}
+  section{
+    padding:64px 24px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  section h2{
+    font-size:1.8rem;
+    color:var(--accent-light);
+    font-weight:normal;
+    margin-bottom:22px;
+    text-align:center;
+  }
+  .sobre p{
+    color:var(--text-dim);
+    max-width:640px;
+    margin:0 auto;
+    text-align:center;
+    font-size:1.05rem;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+    margin-top:36px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:28px 24px;
+    text-align:center;
+  }
+  .card .icon{font-size:1.8rem;margin-bottom:12px;}
+  .card h3{
+    font-family:Arial, sans-serif;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .card p{color:var(--text-dim);font-size:0.98rem;}
+  .card a{color:var(--accent-light);text-decoration:none;}
+  .card a:hover{text-decoration:underline;}
+  .cta{
+    background:var(--bg-alt);
+    text-align:center;
+    padding:64px 24px;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .cta h2{color:var(--text);}
+  .cta p{color:var(--text-dim);margin-bottom:28px;}
+  footer{
+    text-align:center;
+    padding:36px 24px;
+    color:var(--text-dim);
+    font-family:Arial, sans-serif;
+    font-size:0.85rem;
+  }
+  footer .legal{opacity:0.6;margin-top:6px;}
+  @media (max-width:600px){
+    nav a{margin-left:14px;font-size:0.85rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Confraria Bem-te-vi</div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="kicker">Bar &amp; Confraria</div>
+  <h1>Bar <span>Bem-te-vi</span></h1>
+  <p class="tagline">Um point de bairro em São João da Boa Vista para tomar um copo, comer bem e ficar à vontade com os amigos.</p>
+  <a class="btn" href="https://wa.me/5519995554131" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</section>
+
+<section class="sobre" id="sobre">
+  <h2>Sobre a casa</h2>
+  <p>
+    O Bar Bem-te-vi (Confraria Bem-te-vi) é um bar de bairro em São João da Boa Vista, SP.
+    Um lugar simples e acolhedor para happy hour, encontros com amigos e aquele momento de
+    descontração no fim do dia.
+  </p>
+</section>
+
+<section id="contato">
+  <h2>Contato &amp; Endereço</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📍</div>
+      <h3>Endereço</h3>
+      <p>Avenida Doutor Durval Nicolau, 1705<br>São João da Boa Vista &ndash; SP<br>CEP 13874-422</p>
+    </div>
+    <div class="card">
+      <div class="icon">📞</div>
+      <h3>WhatsApp</h3>
+      <p><a href="https://wa.me/5519995554131" target="_blank" rel="noopener">+55 19 99555-4131</a></p>
+    </div>
+    <div class="card">
+      <div class="icon">🕒</div>
+      <h3>Horário</h3>
+      <p>Consulte horário de funcionamento<br>pelo WhatsApp</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>Vem tomar uma com a gente</h2>
+  <p>Fale com a gente pelo WhatsApp para reservas e informações.</p>
+  <a class="btn" href="https://wa.me/5519995554131" target="_blank" rel="noopener">Falar no WhatsApp</a>
+</div>
+
+<footer>
+  <div>Bar Bem-te-vi &middot; Confraria Bem-te-vi</div>
+  <div class="legal">Romz Comércio de Alimentos Ltda</div>
+</footer>
+
+</body>
+</html>
