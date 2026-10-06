@@ -97,19 +97,30 @@
   .lede{max-width:600px;margin:0 auto;text-align:center;color:#48506b;line-height:1.75;font-size:1.02rem;}
   .quote{font-family:'Indie Flower',cursive;font-weight:700;font-size:1.6rem;color:var(--teal);text-align:center;margin-top:22px;}
 
-  .menu-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-    gap:16px;margin-top:40px;
-  }
-  .menu-card{
+  .menu-cats{max-width:760px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px;}
+  .menu-cat{
     background:#fff;border:1px solid rgba(20,33,61,.08);
-    border-radius:16px;padding:26px 12px;text-align:center;
-    box-shadow:0 4px 14px rgba(20,33,61,.05);
-    transition:transform .15s, box-shadow .15s;
+    border-radius:16px;box-shadow:0 4px 14px rgba(20,33,61,.05);
+    overflow:hidden;
   }
-  .menu-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(20,33,61,.1);}
-  .menu-card .ic{width:34px;height:34px;margin:0 auto 12px;color:var(--teal);}
-  .menu-card span{font-weight:700;font-size:.92rem;color:var(--navy);}
+  .menu-cat summary{
+    cursor:pointer;list-style:none;padding:20px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy);
+  }
+  .menu-cat summary::-webkit-details-marker{display:none;}
+  .menu-cat summary .sub{display:block;font-family:'Montserrat',sans-serif;font-weight:500;font-size:.78rem;color:#8891a8;margin-top:2px;}
+  .menu-cat summary .chev{flex:0 0 auto;width:20px;height:20px;color:var(--teal);transition:transform .2s;}
+  .menu-cat[open] summary .chev{transform:rotate(180deg);}
+  .menu-cat-body{padding:0 22px 22px;}
+  .menu-sub{color:var(--teal);text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:700;margin:18px 0 8px;}
+  .menu-sub:first-child{margin-top:0;}
+  .menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(20,33,61,.1);}
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item-name{font-weight:600;color:var(--navy);font-size:.95rem;}
+  .menu-item-desc{color:#6b7280;font-size:.82rem;margin-top:2px;line-height:1.4;}
+  .menu-item-price{font-weight:700;color:var(--teal);font-size:.92rem;white-space:nowrap;flex:0 0 auto;}
+  .menu-note{text-align:center;color:#6b7280;font-size:.88rem;margin-top:22px;max-width:600px;margin-left:auto;margin-right:auto;}
 
   .gallery-grid{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
@@ -160,6 +171,12 @@
   footer .social{margin-bottom:14px;}
   footer .social a{color:var(--gold-light);text-decoration:none;font-size:.88rem;font-weight:600;}
   footer .legal{color:rgba(216,207,180,.45);font-size:.76rem;}
+
+  .som-wrap{background:linear-gradient(135deg,var(--navy-3),var(--navy));}
+  .som-wrap .eyebrow{color:var(--gold-light);}
+  .som-wrap h2{color:var(--cream);}
+  .som-wrap .lede{color:var(--cream-dim);}
+  .som-wrap .btn-row{margin-top:30px;}
 </style>
 </head>
 <body>
@@ -208,36 +225,63 @@
 <section id="cardapio">
   <div class="eyebrow">Cardápio</div>
   <h2>Tem pra todo mundo</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6v4M12 5v5M15 6v4"/><path d="M6 10h12l-1.3 9.2a2 2 0 01-2 1.8h-4.4a2 2 0 01-2-1.8L6 10z"/></svg>
-      <span>Petiscos</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L5 18.5Q12 21 19 18.5z"/><circle cx="11" cy="10.5" r=".9" fill="currentColor" stroke="none"/><circle cx="14.3" cy="13.8" r=".9" fill="currentColor" stroke="none"/><circle cx="10.3" cy="16.3" r=".9" fill="currentColor" stroke="none"/></svg>
-      <span>Pizzas</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14l-7 8z"/><path d="M12 13v7"/><path d="M8 20h8"/></svg>
-      <span>Drinks</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4Q7 10 12 12Q17 10 17 4Z"/><path d="M12 12v7"/><path d="M8 20h8"/></svg>
-      <span>Vinhos</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h9v10a2 2 0 01-2 2H8a2 2 0 01-2-2V9z"/><path d="M15 11h1.5a2 2 0 012 2v2a2 2 0 01-2 2H15"/><path d="M8 9V6a1 1 0 011-1h3"/></svg>
-      <span>Cerveja &amp; Chopp</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 8h9l-1.2 11a2 2 0 01-2 1.8h-2.6a2 2 0 01-2-1.8L7.5 8z"/><path d="M6.5 8h11l-.8-3h-9.4z"/><path d="M13.5 5l3-3"/></svg>
-      <span>Sem Álcool</span>
-    </div>
-    <div class="menu-card">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8a3 3 0 116 0c0 1.9-1.4 3.2-3 3.2S9 9.9 9 8z"/><path d="M9.7 10.8L12 20l2.3-9.2"/><path d="M10.2 13.6h3.6M10.6 16.4h2.8"/></svg>
-      <span>Sobremesas</span>
-    </div>
+  <div class="menu-cats">
+    <details class="menu-cat" open>
+      <summary><span>Petiscos</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Couvert</div><div class="menu-item-desc">Azeitona verde, ovo de codorna, tomate cereja confitado, muçarela em cubos, finalizado com azeite e orégano.</div></div><div class="menu-item-price">R$ 19,90</div></div><div class="menu-sub">Porções</div><div class="menu-item"><div><div class="menu-item-name">Filé Mignon Acebolado</div><div class="menu-item-desc">Tiras, cebola e tomate, acompanha batata frita. Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 110,00</div></div><div class="menu-item"><div><div class="menu-item-name">Parmelito de Mignon</div><div class="menu-item-desc">Filé mignon à parmegiana cortado como aperitivo, acompanha batata frita. Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 119,90</div></div><div class="menu-item"><div><div class="menu-item-name">Parmelito de Frango</div><div class="menu-item-desc">Filé de frango à parmegiana cortado como aperitivo, acompanha batata frita. Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 89,90</div></div><div class="menu-item"><div><div class="menu-item-name">Torresmo</div><div class="menu-item-desc">Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 39,00</div></div><div class="menu-item"><div><div class="menu-item-name">Coxinha Cremosa</div><div class="menu-item-desc">10 unidades.</div></div><div class="menu-item-price">R$ 47,00</div></div><div class="menu-item"><div><div class="menu-item-name">Isca de Frango</div><div class="menu-item-desc">Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 42,00</div></div><div class="menu-item"><div><div class="menu-item-name">Croqueta de Costela</div><div class="menu-item-desc">6 unidades.</div></div><div class="menu-item-price">R$ 47,00</div></div><div class="menu-item"><div><div class="menu-item-name">Croqueta de Mortadela</div><div class="menu-item-desc">6 unidades.</div></div><div class="menu-item-price">R$ 47,00</div></div><div class="menu-item"><div><div class="menu-item-name">Arancini</div><div class="menu-item-desc">Bolinho de risoto recheado com muçarela, empanado e frito. 6 unidades.</div></div><div class="menu-item-price">R$ 47,00</div></div><div class="menu-item"><div><div class="menu-item-name">Bolinho de Carne Seca</div><div class="menu-item-desc">10 unidades.</div></div><div class="menu-item-price">R$ 52,00</div></div><div class="menu-item"><div><div class="menu-item-name">Fritas</div><div class="menu-item-desc">Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 36,00</div></div><div class="menu-item"><div><div class="menu-item-name">Fritas Cheddar e Bacon</div><div class="menu-item-desc">Serve 2 pessoas.</div></div><div class="menu-item-price">R$ 46,00</div></div><div class="menu-sub">Entradas — a partir das 17h30</div><div class="menu-item"><div><div class="menu-item-name">Bem-te-Rolls Três Queijos</div><div class="menu-item-desc">Massa de pizza enrolada com muçarela, provolone e requeijão Scala. Acompanha molho de tomate caseiro. 6 unidades.</div></div><div class="menu-item-price">R$ 39,00</div></div><div class="menu-item"><div><div class="menu-item-name">Bem-te-Rolls Pepperoni</div><div class="menu-item-desc">Massa de pizza enrolada com pepperoni, muçarela e provolone. Acompanha molho de tomate caseiro. 6 unidades.</div></div><div class="menu-item-price">R$ 39,00</div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Pizzas<span class="sub">Originais e da casa · brotinho / grande</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-sub">Pizzas Originais — brotinho / grande</div><div class="menu-item"><div><div class="menu-item-name">Aliche</div><div class="menu-item-desc">Molho de tomate, muçarela, aliche, tomate, azeitona, orégano.</div></div><div class="menu-item-price">R$ 58,00 / R$ 89,00</div></div><div class="menu-item"><div><div class="menu-item-name">Atum</div><div class="menu-item-desc">Molho de tomate, muçarela, atum, cebola, tomate, azeitona, orégano.</div></div><div class="menu-item-price">R$ 63,00 / R$ 97,00</div></div><div class="menu-item"><div><div class="menu-item-name">Bari</div><div class="menu-item-desc">Molho de tomate, requeijão Scala, provolone, parmesão, bacon, azeitona, orégano.</div></div><div class="menu-item-price">R$ 51,00 / R$ 79,00</div></div><div class="menu-item"><div><div class="menu-item-name">Brócolis</div><div class="menu-item-desc">Molho de tomate, muçarela, brócolis, requeijão Scala, bacon, alho frito, azeitona, orégano.</div></div><div class="menu-item-price">R$ 51,00 / R$ 79,00</div></div><div class="menu-item"><div><div class="menu-item-name">Calabresa</div><div class="menu-item-desc">Molho de tomate, muçarela, calabresa, cebola, azeitona, orégano.</div></div><div class="menu-item-price">R$ 47,00 / R$ 72,00</div></div><div class="menu-item"><div><div class="menu-item-name">Carne Seca</div><div class="menu-item-desc">Molho de tomate, muçarela, carne seca, requeijão Scala, azeitona, orégano.</div></div><div class="menu-item-price">R$ 58,00 / R$ 89,00</div></div><div class="menu-item"><div><div class="menu-item-name">Champignon e Bacon</div><div class="menu-item-desc">Molho de tomate, muçarela, champignon, bacon, azeitona, orégano.</div></div><div class="menu-item-price">R$ 51,00 / R$ 78,00</div></div><div class="menu-item"><div><div class="menu-item-name">Filé com Fritas</div><div class="menu-item-desc">Molho de tomate, muçarela, filé mignon, batata frita, requeijão Scala, azeitona, orégano.</div></div><div class="menu-item-price">R$ 71,00 / R$ 109,00</div></div><div class="menu-item"><div><div class="menu-item-name">Frango com Bacon</div><div class="menu-item-desc">Molho de tomate, muçarela, frango desfiado, requeijão Scala, bacon, milho, azeitona, orégano.</div></div><div class="menu-item-price">R$ 51,00 / R$ 79,00</div></div><div class="menu-item"><div><div class="menu-item-name">Lombo com Requeijão</div><div class="menu-item-desc">Molho de tomate, muçarela, lombo canadense, requeijão Scala, azeitona, orégano.</div></div><div class="menu-item-price">R$ 55,00 / R$ 85,00</div></div><div class="menu-item"><div><div class="menu-item-name">Marguerita</div><div class="menu-item-desc">Molho de tomate, muçarela, tomate, parmesão, manjericão, azeitona, orégano.</div></div><div class="menu-item-price">R$ 49,00 / R$ 75,00</div></div><div class="menu-item"><div><div class="menu-item-name">Muçarela</div><div class="menu-item-desc">Molho de tomate, muçarela, tomate, azeitona, orégano.</div></div><div class="menu-item-price">R$ 47,00 / R$ 72,00</div></div><div class="menu-item"><div><div class="menu-item-name">Palmito</div><div class="menu-item-desc">Molho de tomate, muçarela, palmito, requeijão Scala, azeitona, orégano.</div></div><div class="menu-item-price">R$ 58,00 / R$ 89,00</div></div><div class="menu-item"><div><div class="menu-item-name">Pepperoni</div><div class="menu-item-desc">Molho de tomate, muçarela, pepperoni, azeitona, orégano.</div></div><div class="menu-item-price">R$ 55,00 / R$ 85,00</div></div><div class="menu-item"><div><div class="menu-item-name">Portuguesa</div><div class="menu-item-desc">Molho de tomate, muçarela, presunto, ervilha, palmito, ovos, cebola, azeitona, orégano.</div></div><div class="menu-item-price">R$ 55,00 / R$ 85,00</div></div><div class="menu-item"><div><div class="menu-item-name">Quatro Queijos</div><div class="menu-item-desc">Molho de tomate, muçarela, requeijão Scala, provolone, parmesão, tomate, azeitona, orégano.</div></div><div class="menu-item-price">R$ 55,00 / R$ 85,00</div></div><div class="menu-sub">Pizzas da Casa — brotinho / grande</div><div class="menu-item"><div><div class="menu-item-name">Zucchini</div><div class="menu-item-desc">Molho de tomate, muçarela, abobrinha em conserva, parmesão, azeitona, orégano.</div></div><div class="menu-item-price">R$ 55,00 / R$ 85,00</div></div><div class="menu-item"><div><div class="menu-item-name">Burrata</div><div class="menu-item-desc">Molho de tomate, muçarela, burrata, pesto, amêndoas laminadas, rúcula, azeitona, orégano.</div></div><div class="menu-item-price">R$ 71,00 / R$ 109,00</div></div><div class="menu-item"><div><div class="menu-item-name">Pera com Gorgonzola</div><div class="menu-item-desc">Molho de tomate, muçarela, pera, gorgonzola, nozes, mel, azeitona, orégano.</div></div><div class="menu-item-price">R$ 71,00 / R$ 109,00</div></div><div class="menu-item-desc" style="margin-top:10px;">Pizzas a partir das 17h30.</div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Panino<span class="sub">Individual</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Panino de Mignon</div><div class="menu-item-desc">Sanduíche com pão de massa de pizza, muçarela, provolone, mignon em tiras, rúcula e raspas de limão siciliano.</div></div><div class="menu-item-price">R$ 47,00</div></div><div class="menu-item"><div><div class="menu-item-name">Panino de Zucchini</div><div class="menu-item-desc">Sanduíche com pão de massa de pizza, abobrinha, muçarela, provolone, rúcula e raspas de limão siciliano.</div></div><div class="menu-item-price">R$ 45,00</div></div><div class="menu-item"><div><div class="menu-item-name">Panino de Frango</div><div class="menu-item-desc">Sanduíche com pão de massa de pizza, frango, muçarela, provolone, rúcula e raspas de limão siciliano.</div></div><div class="menu-item-price">R$ 43,00</div></div><div class="menu-item-desc" style="margin-top:10px;">Individual, a partir das 17h30.</div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Drinks<span class="sub">Assinaturas da casa</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Bebi Veneno</div><div class="menu-item-desc">Jägermeister, xarope de maçã verde, limão siciliano e água tônica.</div></div><div class="menu-item-price">R$ 42,00</div></div><div class="menu-item"><div><div class="menu-item-name">Crepúsculo</div><div class="menu-item-desc">Campari, Licor 43 e laranja.</div></div><div class="menu-item-price">R$ 38,00</div></div><div class="menu-item"><div><div class="menu-item-name">Aperol Spritz</div><div class="menu-item-desc">Aperol, espumante prosecco e laranja.</div></div><div class="menu-item-price">R$ 37,00</div></div><div class="menu-item"><div><div class="menu-item-name">Negroni</div><div class="menu-item-desc">Gin, vermute tinto, Campari e twist de laranja.</div></div><div class="menu-item-price">R$ 34,00</div></div><div class="menu-item"><div><div class="menu-item-name">Cuba Libre</div><div class="menu-item-desc">Rum, Coca-Cola e limão.</div></div><div class="menu-item-price">R$ 34,00</div></div><div class="menu-item"><div><div class="menu-item-name">Mojito</div><div class="menu-item-desc">Rum branco, hortelã, limão, açúcar e água com gás.</div></div><div class="menu-item-price">R$ 34,00</div></div><div class="menu-item"><div><div class="menu-item-name">Limoncello</div><div class="menu-item-desc">Limoncello, xarope de açúcar, espumante e limão siciliano.</div></div><div class="menu-item-price">R$ 38,00</div></div><div class="menu-item"><div><div class="menu-item-name">Carajillo 43</div><div class="menu-item-desc">Licor 43, café espresso e canela maçaricada.</div></div><div class="menu-item-price">R$ 42,00</div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Gins &amp; Caipirinhas</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-sub">Gins — Tanqueray R$ 36 · Gordon's R$ 33</div><div class="menu-item"><div><div class="menu-item-name">Gin Tônica Clássico</div><div class="menu-item-desc">Gin, água tônica, rodela de limão siciliano e alecrim.</div></div><div class="menu-item-price"></div></div><div class="menu-item"><div><div class="menu-item-name">Gin Tropical</div><div class="menu-item-desc">Gin, energético Red Bull Tropical e laranja.</div></div><div class="menu-item-price"></div></div><div class="menu-item"><div><div class="menu-item-name">Gin Pink</div><div class="menu-item-desc">Gin, água tônica e dashes de Angostura.</div></div><div class="menu-item-price"></div></div><div class="menu-item"><div><div class="menu-item-name">Gin Especiarias</div><div class="menu-item-desc">Gin, água tônica, canela em pau, zimbro, anis estrelado e laranja.</div></div><div class="menu-item-price"></div></div><div class="menu-sub">Caipirinhas — Pinga 51 R$ 27 · Velho Barreiro R$ 27 · Smirnoff R$ 30 · Saquê R$ 30 · Absolut R$ 37</div><div class="menu-item"><div><div class="menu-item-name">Clássica</div><div class="menu-item-desc">Raspas de rapadura, limão taiti e xarope de açúcar.</div></div><div class="menu-item-price"></div></div><div class="menu-item"><div><div class="menu-item-name">Frutas Vermelhas</div><div class="menu-item-desc">Calda de frutas vermelhas e limão taiti.</div></div><div class="menu-item-price"></div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Mocktails<span class="sub">Sem álcool</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Soda Italiana</div><div class="menu-item-desc">Consultar sabores disponíveis.</div></div><div class="menu-item-price">R$ 22,00</div></div><div class="menu-item"><div><div class="menu-item-name">Clássica</div><div class="menu-item-desc">Raspas de rapadura, limão taiti, xarope de açúcar e água com gás.</div></div><div class="menu-item-price">R$ 27,00</div></div><div class="menu-item"><div><div class="menu-item-name">Frutas Vermelhas</div><div class="menu-item-desc">Calda de frutas vermelhas, limão taiti e água com gás.</div></div><div class="menu-item-price">R$ 27,00</div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Cerveja &amp; Chopp</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-sub">Chopp — 300ml</div><div class="menu-item"><div><div class="menu-item-name">Brahma Claro</div></div><div class="menu-item-price">R$ 12,90</div></div><div class="menu-sub">Cervejas — 600ml</div><div class="menu-item"><div><div class="menu-item-name">Original</div></div><div class="menu-item-price">R$ 16,00</div></div><div class="menu-item"><div><div class="menu-item-name">Antarctica</div></div><div class="menu-item-price">R$ 13,00</div></div><div class="menu-item"><div><div class="menu-item-name">Corona</div></div><div class="menu-item-price">R$ 18,00</div></div><div class="menu-item"><div><div class="menu-item-name">Serra Malte</div></div><div class="menu-item-price">R$ 17,00</div></div><div class="menu-item"><div><div class="menu-item-name">Spaten</div></div><div class="menu-item-price">R$ 16,00</div></div><div class="menu-item"><div><div class="menu-item-name">Stella Artois Pure Gold</div></div><div class="menu-item-price">R$ 18,00</div></div><div class="menu-sub">Cervejas — 330ml</div><div class="menu-item"><div><div class="menu-item-name">Corona Cero Sunbrew</div></div><div class="menu-item-price">R$ 13,00</div></div><div class="menu-item"><div><div class="menu-item-name">Corona</div></div><div class="menu-item-price">R$ 13,00</div></div><div class="menu-item"><div><div class="menu-item-name">Michelob Ultra</div></div><div class="menu-item-price">R$ 12,00</div></div><div class="menu-item"><div><div class="menu-item-name">Flying Fish Saborizada</div></div><div class="menu-item-price">R$ 12,00</div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Doses</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Campari</div></div><div class="menu-item-price">R$ 18,00</div></div><div class="menu-item"><div><div class="menu-item-name">Absolut</div></div><div class="menu-item-price">R$ 23,00</div></div><div class="menu-item"><div><div class="menu-item-name">Smirnoff</div></div><div class="menu-item-price">R$ 17,00</div></div><div class="menu-item"><div><div class="menu-item-name">Licor 43</div></div><div class="menu-item-price">R$ 32,00</div></div><div class="menu-item"><div><div class="menu-item-name">Jack Daniel's</div></div><div class="menu-item-price">R$ 28,00</div></div><div class="menu-item"><div><div class="menu-item-name">Red Label</div></div><div class="menu-item-price">R$ 25,00</div></div><div class="menu-item"><div><div class="menu-item-name">Black Label</div></div><div class="menu-item-price">R$ 35,00</div></div><div class="menu-item"><div><div class="menu-item-name">Rum Bacardi</div></div><div class="menu-item-price">R$ 16,00</div></div><div class="menu-item"><div><div class="menu-item-name">Jägermeister</div></div><div class="menu-item-price">R$ 27,00</div></div><div class="menu-item"><div><div class="menu-item-name">Cachaça 51</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">Cachaça 51 Ouro</div></div><div class="menu-item-price">R$ 10,00</div></div><div class="menu-item"><div><div class="menu-item-name">José Cuervo</div></div><div class="menu-item-price">R$ 25,00</div></div>
+      </div>
+    </details>
+    <details class="menu-cat">
+      <summary><span>Sem Álcool</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="menu-cat-body">
+        <div class="menu-item"><div><div class="menu-item-name">Água</div><div class="menu-item-desc">Com ou sem gás.</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">Suco de Laranja</div></div><div class="menu-item-price">R$ 15,00</div></div><div class="menu-item"><div><div class="menu-item-name">Suco de Limão</div></div><div class="menu-item-price">R$ 15,00</div></div><div class="menu-item"><div><div class="menu-item-name">Soda Antárctica</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">Guaraná Antárctica</div><div class="menu-item-desc">Original e zero.</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">Pepsi</div><div class="menu-item-desc">Original e zero.</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">H2Oh</div><div class="menu-item-desc">Consultar sabores.</div></div><div class="menu-item-price">R$ 10,00</div></div><div class="menu-item"><div><div class="menu-item-name">Tônica</div><div class="menu-item-desc">Original e zero.</div></div><div class="menu-item-price">R$ 8,00</div></div><div class="menu-item"><div><div class="menu-item-name">Red Bull</div><div class="menu-item-desc">Consultar sabores.</div></div><div class="menu-item-price">R$ 16,00</div></div><div class="menu-item"><div><div class="menu-item-name">Café Nespresso</div></div><div class="menu-item-price">R$ 8,00</div></div>
+      </div>
+    </details>
   </div>
+  <p class="menu-note">Cardápio de vinhos e sobremesas disponível com o garçom. Preços e disponibilidade podem mudar sem aviso prévio. 🦜</p>
 </section>
 <div class="tile-border teal"></div>
 
@@ -255,6 +299,22 @@
   </div>
   <p class="gallery-note">Segue a gente no <a href="https://www.instagram.com/bemtevi.confraria" target="_blank" rel="noopener">Instagram</a> pra ver o dia a dia por lá.</p>
 </section>
+
+
+<div class="som-wrap">
+  <section>
+    <div class="eyebrow">A trilha da casa</div>
+    <h2>O som que toca no Bem-te-vi</h2>
+    <p class="lede">Samba animado e partido alto pra embalar a mesa. Montamos uma playlist de horas rodando sem parar &mdash; dá o play e vem cantar junto.</p>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="https://music.youtube.com/playlist?list=PLTZrMVgPzRbU&si=thgNjaZ9EFKhOLGm" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Ouvir a playlist no YouTube Music
+      </a>
+    </div>
+  </section>
+</div>
+<div class="tile-border teal"></div>
 
 <div class="contato-wrap" id="contato">
   <section>
