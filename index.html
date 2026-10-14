@@ -5,6 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Confraria Bem-te-vi</title>
 <meta name="description" content="Confraria Bem-te-vi — seu lugar de pouso em São João da Boa Vista, SP. Mesa boa, povo bom, chopp gelado.">
+<link rel="canonical" href="https://confrariabemtevi.com.br/">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Confraria Bem-te-vi">
+<meta property="og:title" content="Confraria Bem-te-vi — Bar & Confraria em São João da Boa Vista">
+<meta property="og:description" content="Mesa boa. Povo bom. Chopp gelado. Seu lugar de pouso em São João da Boa Vista, SP.">
+<meta property="og:url" content="https://confrariabemtevi.com.br/">
+<meta property="og:image" content="https://confrariabemtevi.com.br/assets/photos/ambiance-patio.jpg">
+<meta property="og:image:width" content="1100">
+<meta property="og:image:height" content="730">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Confraria Bem-te-vi">
+<meta name="twitter:description" content="Mesa boa. Povo bom. Chopp gelado. Seu lugar de pouso em São João da Boa Vista, SP.">
+<meta name="twitter:image" content="https://confrariabemtevi.com.br/assets/photos/ambiance-patio.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Confraria Bem-te-vi",
+  "image": "https://confrariabemtevi.com.br/assets/photos/ambiance-patio.jpg",
+  "url": "https://confrariabemtevi.com.br/",
+  "telephone": "+5519995554131",
+  "priceRange": "R$ 50-150",
+  "servesCuisine": ["Brasileira", "Pizza", "Petiscos"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Dr. Durval Nicolau, 1705",
+    "addressLocality": "São João da Boa Vista",
+    "addressRegion": "SP",
+    "postalCode": "13874-422",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -21.9726267,
+    "longitude": -46.7670172
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"17:30","closes":"23:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"17:00","closes":"00:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:30","closes":"00:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:30","closes":"23:00"}
+  ],
+  "sameAs": ["https://www.instagram.com/bemtevi.confraria/"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "17"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Baloo+2:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -157,6 +208,12 @@
   .contato-card h3{margin:0 0 10px;color:var(--gold-light);font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;}
   .contato-card p, .contato-card a{color:var(--cream-dim);line-height:1.65;font-size:.96rem;text-decoration:none;}
   .contato-card a:hover{color:var(--gold-light);}
+  .stars{color:var(--gold-light);font-size:1.05rem;letter-spacing:.05em;}
+  .stars-sub{display:block;font-size:.82rem;color:var(--cream-dim);margin-top:4px;font-weight:600;}
+
+  .map-wrap{margin-top:40px;}
+  .map-wrap iframe{width:100%;height:320px;border:0;border-radius:16px;display:block;}
+  .map-wrap .btn-row{margin-top:18px;}
 
   .cta{
     text-align:center;padding:80px 20px;
@@ -177,6 +234,27 @@
   .som-wrap h2{color:var(--cream);}
   .som-wrap .lede{color:var(--cream-dim);}
   .som-wrap .btn-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+
+  .event-card{
+    max-width:700px;margin:40px auto 0;
+    background:#fff;border:1px solid rgba(20,33,61,.08);
+    border-radius:16px;box-shadow:0 4px 14px rgba(20,33,61,.05);
+    padding:28px;display:flex;gap:24px;align-items:flex-start;
+  }
+  .event-date{
+    flex:0 0 auto;width:72px;height:72px;border-radius:14px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--navy);
+  }
+  .event-date .event-day{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.7rem;line-height:1;}
+  .event-date .event-month{font-size:.72rem;font-weight:700;letter-spacing:.1em;margin-top:2px;}
+  .event-info h3{font-family:'Baloo 2',sans-serif;margin:0 0 8px;font-size:1.15rem;color:var(--navy);}
+  .event-info .event-meta{color:var(--teal);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px;}
+  .event-info p.event-desc{color:#48506b;line-height:1.65;font-size:.95rem;margin:0 0 18px;}
+  @media (max-width:540px){
+    .event-card{flex-direction:column;align-items:flex-start;}
+  }
 </style>
 </head>
 <body>
@@ -189,6 +267,7 @@
     </a>
     <nav>
       <a class="nav-link" href="#sobre">Sobre</a>
+      <a class="nav-link" href="#agenda">Agenda</a>
       <a class="nav-link" href="#cardapio">Cardápio</a>
       <a class="nav-link" href="#fotos">Fotos</a>
       <a class="nav-link" href="#contato">Contato</a>
@@ -220,6 +299,20 @@
   <h2>Um pouso pra chamar de seu</h2>
   <p class="lede">A Confraria Bem-te-vi nasceu pra ser aquele point de bairro onde todo mundo se sente em casa: mesa farta, chopp sempre gelado e aquele papo bom que só rola com boa companhia. Um lugar pra pousar depois de um dia cheio — e ficar.</p>
   <p class="quote">"vem pousar." 🦜</p>
+</section>
+
+<section id="agenda">
+  <div class="eyebrow">Agenda</div>
+  <h2>Vem correr com a gente</h2>
+  <div class="event-card">
+    <div class="event-date"><span class="event-day">29</span><span class="event-month">NOV</span></div>
+    <div class="event-info">
+      <div class="event-meta">Domingo · 7h30 (corrida) · 8h30 (caminhada)</div>
+      <h3>Bem-te-vi Hybrid Run · 1ª edição</h3>
+      <p class="event-desc">Corrida de 5 km e 10 km e caminhada de 3 km com largada e chegada na porta da casa. Depois é lounge, medalha e chopp pra comemorar junto com a gente.</p>
+      <a class="btn btn-gold" href="https://www.ticketsports.com.br/e/bemtevi-hybrid-run-88330" target="_blank" rel="noopener">Fazer inscrição</a>
+    </div>
+  </div>
 </section>
 
 <section id="cardapio">
@@ -340,6 +433,19 @@
       <div class="contato-card">
         <h3>Horário</h3>
         <p>Terça a quinta: 17h30 às 23h<br>Sexta: 17h às 00h<br>Sábado: 11h30 às 00h<br>Domingo: 11h30 às 23h<br>Segunda: fechado</p>
+      </div>
+      <div class="contato-card">
+        <h3>Avaliações</h3>
+        <p><a href="https://www.google.com/maps/place/Confraria+Bem-te-vi/@-21.9726267,-46.7670172,17z/data=!3m1!4b1!4m6!3m5!1s0x94c9cb833dda4583:0x8c34bc6a2c921fd!8m2!3d-21.9726267!4d-46.7670172!16s%2Fg%2F11z5rt0mk1" target="_blank" rel="noopener"><span class="stars">★★★★★ 4,8</span><span class="stars-sub">(17 avaliações no Google)</span></a></p>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=Confraria+Bem-te-vi,+Av.+Dr.+Durval+Nicolau,+1705,+S%C3%A3o+Jo%C3%A3o+da+Boa+Vista+-+SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Mapa — Confraria Bem-te-vi"></iframe>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=Confraria+Bem-te-vi,+Av.+Dr.+Durval+Nicolau,+1705,+S%C3%A3o+Jo%C3%A3o+da+Boa+Vista+-+SP" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Como chegar
+        </a>
       </div>
     </div>
   </section>
